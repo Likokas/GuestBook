@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ActivationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
@@ -28,6 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function (){
     return redirect()->route('event.index');
 });
+Route::get('activate',[ActivationController::class,'activate'])->name('activate');
 
 Route::resource('event', EventController::class);
 

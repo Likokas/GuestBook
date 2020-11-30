@@ -52,9 +52,13 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{  url('user') }}">User</a>
-                        </li>
+                        @auth
+                            @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{  url('user') }}">User</a>
+                            </li>
+                            @endif
+                        @endauth
 
                         @auth()
                             <li class="nav-item">
@@ -71,6 +75,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
+
                         @if (Route::has('register'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container" style="margin-top: 20px;">
         <div class="row">
-            <h1 class="col">List Sepeda</h1>
+            <h1 class="col">List Event</h1>
         </div>
         <div class="row">
             @auth()
